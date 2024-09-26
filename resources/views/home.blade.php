@@ -1,8 +1,10 @@
-@extends('layouts/app')
+@extends('layouts.app')
 
-@section ('title') Главная страница @endsection
+@section('title', 'Главная страница')
 
-@section ('header') @include ('components/header') @endsection
+@section ('header') 
+@include ('components.header.header') @endsection
 
-@section ('main_content') @include ('todo-list') @endsection
+@section ('main_content') 
+@include ('components.todo-list.todo-list') @endsection
 

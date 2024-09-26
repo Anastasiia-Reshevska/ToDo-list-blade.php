@@ -1,54 +1,24 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./resources/js/header.js":
-/*!********************************!*\
-  !*** ./resources/js/header.js ***!
-  \********************************/
+/***/ "./resources/scss/home.scss":
+/*!**********************************!*\
+  !*** ./resources/scss/home.scss ***!
+  \**********************************/
 /***/ (() => {
 
-(function () {
-  var body = document.querySelector('body');
-  var menuBtn = document.getElementById('burger-menu');
-  if (!body || !menuBtn) return null;
-  menuBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-    body.classList.toggle('open-menu');
-  });
-})();
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Can't find stylesheet to import.\n  ╷\n3 │ @import 'header';\n  │         ^^^^^^^^\n  ╵\n  resources/scss/home.scss 3:9  root stylesheet\n    at processResult (/Users/user/Documents/Prodjects/js/To-Do List/node_modules/webpack/lib/NormalModule.js:885:19)\n    at /Users/user/Documents/Prodjects/js/To-Do List/node_modules/webpack/lib/NormalModule.js:1026:5\n    at /Users/user/Documents/Prodjects/js/To-Do List/node_modules/loader-runner/lib/LoaderRunner.js:400:11\n    at /Users/user/Documents/Prodjects/js/To-Do List/node_modules/loader-runner/lib/LoaderRunner.js:252:18\n    at context.callback (/Users/user/Documents/Prodjects/js/To-Do List/node_modules/loader-runner/lib/LoaderRunner.js:124:13)\n    at Object.loader (/Users/user/Documents/Prodjects/js/To-Do List/node_modules/sass-loader/dist/index.js:69:5)");
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
 /******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./resources/scss/home.scss"]();
 /******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/************************************************************************/
-/*!******************************!*\
-  !*** ./resources/js/home.js ***!
-  \******************************/
-__webpack_require__(/*! ./header */ "./resources/js/header.js");
 /******/ })()
 ;

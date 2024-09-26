@@ -1,4 +1,4 @@
-<header> 
+<header>
     <div class="header__container">
         <button class="burger" id="burger-menu" aria-label="Open the menu">
             <div class="burger__lines" aria-hidden="true">
@@ -19,11 +19,10 @@
                 <li class="header__nav-item">
                     <a href="#" class="header__nav-link header__nav-link_last">Тарифы</a>
                     <div class="header__buttons">
-                    <button class="header__button-login">Войти</button>
-                    <button class="header__button-start">Начать бесплатно</button>
-            </div>
+                        <button class="header__button-login">Войти</button>
+                        <button class="header__button-start">Начать бесплатно</button>
+                    </div>
                 </li>
-                
             </ul>
         </div>
     </div>
