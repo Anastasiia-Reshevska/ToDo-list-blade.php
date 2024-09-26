@@ -1,4 +1,4 @@
-<header>
+<header class="header">
     <div class="header__container">
         <button class="burger" id="burger-menu" aria-label="Open the menu">
             <div class="burger__lines" aria-hidden="true">
