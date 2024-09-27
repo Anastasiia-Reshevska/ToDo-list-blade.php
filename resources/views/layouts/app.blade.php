@@ -7,16 +7,13 @@
     <title>@yield('title')</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="{{ mix('/css/home.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    @vite(['public/build/assets/home-D6XyL9wx.css', 'public/build/assets/header-CNilZMBj.js'])
 </head>
 
 <body>
     @yield('header')
     @yield('main_content')
-    <script src="{{ asset('/js/pages/home.js')}}"></script>
 </body>
 
 </html>
