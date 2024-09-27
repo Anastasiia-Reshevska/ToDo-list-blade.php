@@ -77,6 +77,10 @@
     &:last-child {
       margin-right: 15px;
     }
+
+    &:hover {
+      border: 1px solid #bdbebd;
+    }
   }
 
   &__check_mark {
@@ -95,8 +99,8 @@
   }
 
   &__cross {
-    width: 21px;
-    height: 21px;
+    width: 1.17em;
+    height: 1.17em;
     background-color: #f094a0;
     border: #f094a0;
     clip-path: polygon(
@@ -113,7 +117,6 @@
       80% 0%,
       50% 30%
     );
-    margin-top: 2px;
 
     &:hover {
       background-color: #ec4a09;
