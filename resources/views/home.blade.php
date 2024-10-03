@@ -3,7 +3,9 @@
 @section('title', 'Главная страница')
 
 @section ('header')
-@include ('components.header.header') @endsection
+    @include ('components.header.index') 
+@endsection
 
 @section ('main_content')
-@include ('components.todo-list.todo-list') @endsection
+    @include ('components.todo-list.index') 
+@endsection

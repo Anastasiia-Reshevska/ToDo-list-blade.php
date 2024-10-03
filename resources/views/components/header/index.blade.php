@@ -17,10 +17,10 @@
                     <a href="#" class="header__nav-link">Ресурсы</a>
                 </li>
                 <li class="header__nav-item">
-                    <a href="#" class="header__nav-link header__nav-link_last">Тарифы</a>
+                    <a href="#" class="header__nav-link">Тарифы</a>
                     <div class="header__buttons">
-                        <button class="header__button-login">Войти</button>
-                        <button class="header__button-start">Начать бесплатно</button>
+                        <button class="header__button_login">Войти</button>
+                        <button class="header__button_start">Начать бесплатно</button>
                     </div>
                 </li>
             </ul>

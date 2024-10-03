@@ -4,7 +4,7 @@
             <div class="to-do-list__title">
                 <h1>To-Do list</h1>
                 <h3>Главная задача на день, спланировать его. Планируй вместе с нами!</h3>
-                <h4>Список дел</4h>
+                <h4>Список дел</h4>
             </div>
             <ul class="to-do-list__affairs" id="to-do-list">
             </ul>
@@ -30,11 +30,11 @@
                 <div class="to-do-list__check_mark"></div>
             </button>
 
-            <button class="to-do-list__check_background" data-action="delete">
-                <div class="to-do-list__cross"></div>
+            <button class="to-do-list__check_background">
+                <div class="to-do-list__cross" data-action="delete"></div>
             </button>
-            <button class="to-do-list__check_background" data-action="edit">
-                <svg class="to-do-list__edit" width="40" height="25" aria-hidden="true">
+            <button class="to-do-list__check_background">
+                <svg class="to-do-list__edit" width="40" height="25" aria-hidden="true" data-action="edit">
                     <use href="#icon-edit"/>
                 </svg>
             </button>

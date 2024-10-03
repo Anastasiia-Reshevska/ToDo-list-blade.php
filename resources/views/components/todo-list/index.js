@@ -55,7 +55,7 @@
   }
 
   function toggleItemCompletion(element) {
-    element.classList.toggle('to-do-list__item_complate');
+    element.classList.toggle('to-do-list__item_complete');
   }
 
   listElement.addEventListener('click', (event) => {

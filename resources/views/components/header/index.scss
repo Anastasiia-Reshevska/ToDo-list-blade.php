@@ -26,7 +26,7 @@
       }
 
       li {
-        font-family: $ff;
+        font-family: $font-primary;
         list-style-type: none;
 
         @media (min-width: 992px) {
@@ -48,7 +48,7 @@
     }
 
     @media (min-width: 992px) {
-      .header__nav-link_last {
+      .header__nav-link:not(:last-child) {
         border-right: 1px solid #bdbebd;
         padding-right: 20px;
       }
@@ -60,34 +60,34 @@
     display: flex;
     align-items: stretch;
     white-space: nowrap;
-    border-top: 1px solid #bdbebd;
     padding-top: 20px;
+    border-top: 1px solid #bdbebd;
 
     @media (min-width: 992px) {
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
-      border-top: none;
       padding: 0;
+      border-top: none;
     }
 
     button {
       display: inline-block;
       max-height: 58px;
-      font-family: $ff;
+      padding: 10px 18px;
+      font-family: $font-primary;
       font-size: 16px;
       font-weight: 700;
       border-radius: 10px;
       transition: 0.2s ease all;
-      padding: 10px 18px;
-
+      
       @media (min-width: 992px) {
         padding: 10px 20px;
       }
     }
   }
 
-  &__button-start {
+  &__button_start {
     width: 50%;
     color: aliceblue;
     background-color: #e34432;
@@ -105,24 +105,24 @@
     }
   }
 
-  &__button-login {
+  &__button_login {
     width: 50%;
+    margin-right: 10px;
     color: #2c2c2c;
     background-color: #e7e6e4;
     border: #e7e6e4;
-    margin-right: 10px;
 
     @media (min-width: 992px) {
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
-      font-family: $ff;
+      padding: 16px 19px 0 19px;
+      font-family: $font-primary;
       font-weight: 700;
       color: #2c2c2c;
       background-color: transparent;
       border: none;
       cursor: pointer;
-      padding: 16px 19px 0 19px;
     }
 
     &:hover {
@@ -199,11 +199,11 @@
       left: 20px;
       top: 20px;
       height: 100%;
+      padding-right: 20px;
       background-color: white;
       z-index: 3;
       overflow-x: hidden;
-      padding-right: 20px;
-
+      
       .burger {
         right: 30px;
       }
