@@ -32,7 +32,6 @@
 
         listElement.append(listItem);
       } else if (editForm.dataset.mode === 'edit') {
-        console.log(editForm.dataset.editId);
         listItem = listElement.querySelector(`#${editForm.dataset.editId}`);
         listItem.querySelector('.to-do-list__task').innerText = data.task;
         if (!listItem) return null;
@@ -46,8 +45,7 @@
   function editItem(element) {
     editForm.dataset.mode = 'edit';
     editForm.dataset.editId = element.id;
-    editForm.querySelector('[name=task]').value =
-      element.querySelector('.to-do-list__task').innerText;
+    editForm.querySelector('[name=task]').value = element.querySelector('.to-do-list__task').innerText;
   }
 
   function deleteItem(element) {
@@ -60,6 +58,9 @@
 
   listElement.addEventListener('click', (event) => {
     const item = event.target.closest('.to-do-list__item');
+    console.log(event.target);
+    if (!item) return null;
+
 
     switch (event.target.dataset.action) {
       case 'edit':

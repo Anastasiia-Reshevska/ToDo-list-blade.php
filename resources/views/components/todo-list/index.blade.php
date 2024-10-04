@@ -16,29 +16,22 @@
                     <input type="text" name="task" placeholder="Текст задачи">
                 </div>
                 <p>Что делаем, сколько времени тратим, какой результат получаем</p>
-                <button class="to-do-list__add_task" type="submit">Добавить</button>
+                <button class="to-do-list__task_add" type="submit">Добавить</button>
             </div>
+        </form>
     </div>
-    </form>
 </section>
 
 <template id="to-do-list__template">
     <li class="to-do-list__item">
         <div class="to-do-list__task"></div>
         <div class="to-do-list__check">
-            <button class="to-do-list__check_background" data-action="complete">
-                <div class="to-do-list__check_mark"></div>
+            <button class="to-do-list__check_background to-do-list__check_background-mark" data-action="complete">
             </button>
-
-            <button class="to-do-list__check_background">
-                <div class="to-do-list__cross" data-action="delete"></div>
+            <button class="to-do-list__check_background to-do-list__check_background-cross" data-action="delete">
             </button>
-            <button class="to-do-list__check_background">
-                <svg class="to-do-list__edit" width="40" height="25" aria-hidden="true" data-action="edit">
-                    <use href="#icon-edit"/>
-                </svg>
+            <button class=" to-do-list__check_background to-do-list__check_background-edit" data-action="edit">
             </button>
         </div>
     </li>
-
 </template>
