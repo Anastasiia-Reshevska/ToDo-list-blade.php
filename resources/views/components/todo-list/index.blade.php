@@ -6,7 +6,12 @@
                 <h3>Главная задача на день, спланировать его. Планируй вместе с нами!</h3>
                 <h4>Список дел</h4>
             </div>
-            <ul class="to-do-list__affairs" id="to-do-list">
+            <ul class="to-do-list__filter">
+                <li class="to-do-list__filter-item" data-action="all">Все задачи</li>
+                <li class="to-do-list__filter-item" data-action="ready">Выполненные</li>
+                <li class="to-do-list__filter-item" data-action="not-ready">Не выполненные задачи</li>
+            </ul>
+            <ul class="to-do-list__affairs" data-filter="all" id="to-do-list">
             </ul>
         </div>
         <form id="edit-form" data-mode="create" data-editId="">
