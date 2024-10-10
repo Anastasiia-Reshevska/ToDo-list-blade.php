@@ -14,12 +14,13 @@
             <ul class="to-do-list__affairs" data-filter="all" id="to-do-list">
             </ul>
         </div>
-        <form id="edit-form" data-mode="create" data-editId="">
+        <form id="edit-form" data-mode="create">
             <div class="to-do-list__content">
                 <h4>Добавить новую задачу</h4>
                 <div>
-                    <input type="text" name="task" placeholder="Текст задачи">
+                    <input id="new-task" type="text" name="task" placeholder="Текст задачи">
                 </div>
+                <div id="new-object"></div>
                 <p>Что делаем, сколько времени тратим, какой результат получаем</p>
                 <button class="to-do-list__task_add" type="submit">Добавить</button>
             </div>
@@ -35,7 +36,7 @@
             </button>
             <button class="to-do-list__check_background to-do-list__check_background-cross" data-action="delete">
             </button>
-            <button class=" to-do-list__check_background to-do-list__check_background-edit" data-action="edit">
+            <button class="to-do-list__check_background to-do-list__check_background-edit" data-action="edit">
             </button>
         </div>
     </li>
