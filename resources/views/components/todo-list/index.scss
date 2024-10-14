@@ -93,18 +93,6 @@
       width: 100%;
       list-style-type: none;
     }
-    // JS
-    &[data-filter='ready'] {
-      .to-do-list__item:not(.to-do-list__item_complete) {
-        display: none;
-      }
-    }
-
-    &[data-filter='not-ready'] {
-      .to-do-list__item_complete {
-        display: none;
-      }
-    }
   }
 
   // Buttons
@@ -167,9 +155,21 @@
       background-color: #e39eac;
     }
   }
+}
 
-  // JS
-  &__item_complete {
+ // JS
+ .js-to-do-list__item_complete {
     text-decoration: line-through;
+  }
+
+.js-to-do-list__filter-item_show-ready {
+  .to-do-list__item:not(.js-to-do-list__item_complete) {
+    display: none;
+  }
+}
+
+.js-to-do-list__filter-item_show-not-ready {
+  .js-to-do-list__item_complete {
+    display: none;
   }
 }

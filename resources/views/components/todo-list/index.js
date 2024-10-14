@@ -49,7 +49,7 @@
     listItemElement.querySelector('.to-do-list__task').innerText = task.text;
     listElement.append(listItem);
     if (task.isComplete) {
-      listItemElement.classList.add('to-do-list__item_complete');
+      listItemElement.classList.add('js-to-do-list__item_complete');
     }
   }
 
@@ -115,10 +115,10 @@
   function toggleItemCompletion(element) {
     const elemId = element.id;
     let isComplete = true;
-    if (element.classList.contains('to-do-list__item_complete')) {
+    if (element.classList.contains('js-to-do-list__item_complete')) {
       isComplete = false;
     }
-    element.classList.toggle('to-do-list__item_complete');
+    element.classList.toggle('js-to-do-list__item_complete');
     setCompleteTaskLS(elemId, isComplete);
   }
 
@@ -143,16 +143,27 @@
 })();
 
 (function () {
-  const filterItems = document.querySelectorAll('.to-do-list__filter-item');
-  if (!filterItems.length === 0) return null;
-
   if (document.querySelector('input[name="filter"]')) {
     document.querySelectorAll('input[name="filter"]').forEach((elem) => {
-      elem.addEventListener("change", function(event) {
+      elem.addEventListener('change', function (event) {
+        const classSource = document.querySelector('.to-do-list__affairs');
+        if (!classSource) return null;
+        classSource.classList.remove('js-to-do-list__filter-item_show-all','js-to-do-list__filter-item_show-ready','js-to-do-list__filter-item_show-not-ready');
         const filterAction = event.target.value;
-        const dataSource = document.querySelector('.to-do-list__affairs');
-            if (!dataSource) return null;
-            dataSource.dataset.filter = filterAction;  
+
+        switch (filterAction) {
+          case 'all':
+            classSource.classList.add('js-to-do-list__filter-item_show-all');
+            break;
+          case 'ready':
+            classSource.classList.add('js-to-do-list__filter-item_show-ready');
+            break;
+          case 'not-ready':
+            classSource.classList.add('js-to-do-list__filter-item_show-not-ready');
+            break;
+          default:
+            return;
+        }
       });
     });
   }
