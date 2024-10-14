@@ -3,14 +3,25 @@
         <div class="to-do-list__content">
             <div class="to-do-list__title">
                 <h1>To-Do list</h1>
-                <h3>Главная задача на день, спланировать его. Планируй вместе с нами!</h3>
-                <h4>Список дел</h4>
+                <h2>Главная задача на день, спланировать его. Планируй вместе с нами!</h3>
+                    <p>Список дел</p>
             </div>
-            <ul class="to-do-list__filter">
-                <li class="to-do-list__filter-item" data-action="all">Все задачи</li>
-                <li class="to-do-list__filter-item" data-action="ready">Выполненные</li>
-                <li class="to-do-list__filter-item" data-action="not-ready">Не выполненные задачи</li>
-            </ul>
+            <div class="to-do-list__filter">
+                <div class="to-do-list__filter-item">
+                    <input id="input-all" type="radio" value="all" name="filter" checked>
+                    <label for="input-all">Все задачи</label>
+                </div>
+
+                <div class="to-do-list__filter-item">
+                    <input id="input-ready" type="radio" value="ready" name="filter">
+                    <label for="input-ready">Выполненные все</label>
+                </div>
+
+                <div class="to-do-list__filter-item">
+                    <input id="input-not-ready" type="radio" value="not-ready" name="filter">
+                    <label for="input-not-ready">Не выполненные задачи</label>
+                </div>
+            </div>
             <ul class="to-do-list__affairs" data-filter="all" id="to-do-list">
             </ul>
         </div>
@@ -19,6 +30,7 @@
                 <h4>Добавить новую задачу</h4>
                 <div>
                     <input id="new-task" type="text" name="task" placeholder="Текст задачи">
+                    <label for="inew-task">Все задачи</label>
                 </div>
                 <div id="new-object"></div>
                 <p>Что делаем, сколько времени тратим, какой результат получаем</p>

@@ -145,26 +145,17 @@
 })();
 
 (function () {
-  function underlinedFilterItem(element) {
-    document.querySelectorAll('.to-do-list__filter-item').forEach((item) => {
-      item.classList.remove('to-do-list__filter-item_underlined');
-    });
-    if (element.classList.contains('to-do-list__filter-item')) {
-      element.classList.add('to-do-list__filter-item_underlined');
-    }
-  }
-
   const filterItems = document.querySelectorAll('.to-do-list__filter-item');
   if (!filterItems.length === 0) return null;
 
-  filterItems.forEach(function (item) {
-    item.addEventListener('click', (event) => {
-      const filterAction = event.target.dataset['action'];
-      const dataSource = document.querySelector('.to-do-list__affairs');
-      if (!dataSource) return null;
-
-      dataSource.dataset.filter = filterAction;
-      underlinedFilterItem(event.target);
+  if (document.querySelector('input[name="filter"]')) {
+    document.querySelectorAll('input[name="filter"]').forEach((elem) => {
+      elem.addEventListener("change", function(event) {
+        const filterAction = event.target.value;
+        const dataSource = document.querySelector('.to-do-list__affairs');
+            if (!dataSource) return null;
+            dataSource.dataset.filter = filterAction;  
+      });
     });
-  });
+  }
 })();
