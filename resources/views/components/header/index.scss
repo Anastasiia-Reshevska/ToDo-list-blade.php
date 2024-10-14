@@ -56,7 +56,7 @@
   }
 
   // Buttons
-  &__buttons {
+  &__btns {
     display: flex;
     align-items: stretch;
     white-space: nowrap;
@@ -87,7 +87,7 @@
     }
   }
 
-  &__button_start {
+  &__btn_start {
     width: 50%;
     color: aliceblue;
     background-color: #e34432;
@@ -105,7 +105,7 @@
     }
   }
 
-  &__button_login {
+  &__btn_login {
     width: 50%;
     margin-right: 10px;
     color: #2c2c2c;

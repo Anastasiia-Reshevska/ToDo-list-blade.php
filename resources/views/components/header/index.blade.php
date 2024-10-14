@@ -18,9 +18,9 @@
                 </li>
                 <li class="header__nav-item">
                     <a href="#" class="header__nav-link">Тарифы</a>
-                    <div class="header__buttons">
-                        <button class="header__button_login">Войти</button>
-                        <button class="header__button_start">Начать бесплатно</button>
+                    <div class="header__btns">
+                        <button class="header__btn_login">Войти</button>
+                        <button class="header__btn_start">Начать бесплатно</button>
                     </div>
                 </li>
             </ul>

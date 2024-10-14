@@ -30,7 +30,7 @@
                 <h4>Добавить новую задачу</h4>
                 <div>
                     <input id="new-task" type="text" name="task" placeholder="Текст задачи">
-                    <label for="inew-task">Все задачи</label>
+                    <label class="to-do-list__content_new-task" for="new-task">Все задачи</label>
                 </div>
                 <div id="new-object"></div>
                 <p>Что делаем, сколько времени тратим, какой результат получаем</p>
@@ -44,11 +44,11 @@
     <li class="to-do-list__item">
         <div class="to-do-list__task"></div>
         <div class="to-do-list__check">
-            <button class="to-do-list__check_background to-do-list__check_background-mark" data-action="complete">
+            <button aria-label="Complete task" class="to-do-list__check_bg to-do-list__check_bg-mark" data-action="complete">
             </button>
-            <button class="to-do-list__check_background to-do-list__check_background-cross" data-action="delete">
+            <button aria-label="Delete task" class="to-do-list__check_bg to-do-list__check_bg-cross" data-action="delete">
             </button>
-            <button class="to-do-list__check_background to-do-list__check_background-edit" data-action="edit">
+            <button aria-label="Edit task" class="to-do-list__check_bg to-do-list__check_bg-edit" data-action="edit">
             </button>
         </div>
     </li>
