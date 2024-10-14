@@ -1,10 +1,8 @@
 (function () {
   const itemTemplate = document.getElementById('to-do-list__template');
-  if (!itemTemplate) return null;
   const listElement = document.getElementById('to-do-list');
-  if (!listElement) return null;
   const editForm = document.getElementById('edit-form');
-  if (!editForm) return null;
+  if (!itemTemplate || !listElement || !editForm) return null;
 
   function makeId() {
     const date = new Date().valueOf();
@@ -15,8 +13,8 @@
 
   editForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    const formDate = new FormData(editForm);
-    const data = Object.fromEntries(formDate.entries());
+    const formData = new FormData(editForm);
+    const data = Object.fromEntries(formData.entries());
 
     if (data.task) {
       if (editForm.dataset.mode === 'create') {
