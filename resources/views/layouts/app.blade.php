@@ -14,6 +14,7 @@
 <body>
     @yield('header')
     @yield('main_content')
+    @yield('footer')
 </body>
 
 </html>

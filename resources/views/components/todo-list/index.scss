@@ -17,20 +17,18 @@
     background-color: #ffe9f4;
 
     input {
-      height: 20px;
-      width: 1000px;
-      max-width: 100%;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 16px;
       border: 1px solid #bdbebd;
     }
 
     p {
+      font-size: 13px;
       padding-bottom: 10px;
       margin-top: 4px;
     }
 
-    &_new-task {
+    &_new-task-label {
       position: absolute;
       width: 1px;
       height: 1px;
@@ -41,6 +39,10 @@
       clip-path: inset(100%);
       clip: rect(0 0 0 0);
       overflow: hidden;
+    }
+
+    &_new-task-input {
+      width: 100%;
     }
   }
 
@@ -57,9 +59,18 @@
   }
 
   &__filter {
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
 
-    input[type='radio'] + label {
+    @media (max-width: 767px) {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input[type='radio']+label {
       display: inline-block;
       text-align: right;
       padding: 0;
@@ -71,11 +82,12 @@
       visibility: hidden;
     }
 
-    input[type='radio']:checked + label {
+    input[type='radio']:checked+label {
       border-bottom: 2px solid #e39eac;
     }
 
     label:hover {
+      cursor: pointer;
       color: #db7093;
     }
   }
@@ -157,10 +169,10 @@
   }
 }
 
- // JS
- .js-to-do-list__item_complete {
-    text-decoration: line-through;
-  }
+// JS
+.js-to-do-list__item_complete {
+  text-decoration: line-through;
+}
 
 .js-to-do-list__filter-item_show-ready {
   .to-do-list__item:not(.js-to-do-list__item_complete) {

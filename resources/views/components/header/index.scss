@@ -28,10 +28,11 @@
       li {
         font-family: $font-primary;
         list-style-type: none;
+        padding-left: 5px;
+        padding-right: 5px;
 
         @media (min-width: 992px) {
           display: flex;
-          padding-left: 50px;
         }
 
         a {
@@ -39,6 +40,12 @@
           font-weight: 700;
           color: #2c2c2c;
           line-height: 50px;
+          padding: 10px 15px;
+
+          &:hover {
+            background-color: #e7e6e4;
+            border-radius: 0.5em;
+          }
 
           @media (min-width: 992px) {
             white-space: nowrap;
@@ -48,9 +55,9 @@
     }
 
     @media (min-width: 992px) {
-      .header__nav-link:not(:last-child) {
-        border-right: 1px solid #bdbebd;
-        padding-right: 20px;
+      .header__nav-item:last-child {
+        border-left: 1px solid #bdbebd;
+        margin-left: 15px;
       }
     }
   }
@@ -61,6 +68,7 @@
     align-items: stretch;
     white-space: nowrap;
     padding-top: 20px;
+    padding: 10px 10px;
     border-top: 1px solid #bdbebd;
 
     @media (min-width: 992px) {
@@ -68,6 +76,7 @@
       flex-direction: row;
       justify-content: flex-end;
       padding: 0;
+      margin-top: 8px;
       border-top: none;
     }
 
@@ -93,6 +102,7 @@
     background-color: #e34432;
     border: #e34432;
     white-space: wrap;
+    cursor: pointer;
 
     @media (min-width: 992px) {
       width: 182px;
@@ -108,9 +118,11 @@
   &__btn_login {
     width: 50%;
     margin-right: 10px;
+    margin-left: 8px;
     color: #2c2c2c;
     background-color: #e7e6e4;
     border: #e7e6e4;
+    cursor: pointer;
 
     @media (min-width: 992px) {
       display: flex;
@@ -122,15 +134,15 @@
       color: #2c2c2c;
       background-color: transparent;
       border: none;
-      cursor: pointer;
+      cursor: default;
     }
 
     &:hover {
       background-color: #a3a3a3;
 
       @media (min-width: 992px) {
-        background-color: transparent;
-        pointer-events: none;
+        background-color: #e7e6e4;
+        border-radius: 0.5em;
       }
     }
   }
@@ -196,16 +208,19 @@
 .open-menu {
   @media (max-width: 576px) {
     .header__container {
-      left: 20px;
-      top: 20px;
-      height: 100%;
-      padding-right: 20px;
+      position: absolute;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      padding-right: 0;
+      padding-left: 0;
+      margin-left: 0;
       background-color: white;
       z-index: 3;
-      overflow-x: hidden;
+      overflow-x: auto;
 
       .burger {
-        right: 30px;
+        right: 20px;
       }
     }
   }
@@ -228,12 +243,6 @@
 
     span {
       transform: scale(0);
-    }
-  }
-
-  @media (max-width: 576px) {
-    .to-do-list__container {
-      display: none;
     }
   }
 }

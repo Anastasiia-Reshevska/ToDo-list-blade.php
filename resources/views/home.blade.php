@@ -9,3 +9,7 @@
 @section ('main_content')
     @include ('components.todo-list.index') 
 @endsection
+
+@section ('footer')
+    @include ('components.footer.index') 
+@endsection

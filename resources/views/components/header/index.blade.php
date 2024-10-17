@@ -18,6 +18,8 @@
                 </li>
                 <li class="header__nav-item">
                     <a href="#" class="header__nav-link">Тарифы</a>
+                </li>
+                <li class="header__nav-item">
                     <div class="header__btns">
                         <button class="header__btn_login">Войти</button>
                         <button class="header__btn_start">Начать бесплатно</button>
