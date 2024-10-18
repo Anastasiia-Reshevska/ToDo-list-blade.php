@@ -9,7 +9,7 @@
     return `itemid-${date}`;
   }
 
-  showTasksFromLS();
+  showTasksFromLocalStorage();
 
   editForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -24,12 +24,12 @@
           text: data.task,
           isComplete: false,
         };
-        addTaskHTML(newTask);
-        addTaskLS(newTask);
+        createTask(newTask);
+        addTaskLocalStorage(newTask);
       } else if (editForm.dataset.mode === 'edit') {
         const taskId = editForm.dataset.editId;
-        editTaskHTML(taskId, data.task);
-        editTaskFromLS(taskId, data.task);
+        editTask(taskId, data.task);
+        editTaskFromLocalStorage(taskId, data.task);
       }
       editForm.reset();
       editForm.dataset.mode = 'create';
@@ -37,12 +37,12 @@
     }
   });
 
-  function editTaskHTML(taskId, taskText) {
+  function editTask(taskId, taskText) {
     const listItem = listElement.querySelector('#' + taskId);
     listItem.querySelector('.to-do-list__task').innerText = taskText;
   }
 
-  function addTaskHTML(task) {
+  function createTask(task) {
     const listItem = itemTemplate.content.cloneNode(true);
     const listItemElement = listItem.querySelector('.to-do-list__item');
     listItemElement.setAttribute('id', task.id);
@@ -53,7 +53,7 @@
     }
   }
 
-  function addTaskLS(task) {
+  function addTaskLocalStorage(task) {
     let tasks = [];
     if (localStorage.getItem('tasks')) {
       tasks = JSON.parse(localStorage.getItem('tasks'));
@@ -62,18 +62,18 @@
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 
-  function showTasksFromLS(task) {
+  function showTasksFromLocalStorage(task) {
     let tasks = localStorage.getItem('tasks');
 
     if (tasks) {
       tasks = JSON.parse(tasks); //преобразовали массива переменной в объект
       tasks.forEach((item) => {
-        addTaskHTML(item);
+        createTask(item);
       });
     }
   }
 
-  function setCompleteTaskLS(taskId, isComplete) {
+  function setCompleteTaskLocalStorage(taskId, isComplete) {
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks.forEach((item) => {
       if (item.id === taskId) {
@@ -83,13 +83,13 @@
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 
-  function removeTaskFromLS(taskId) {
+  function removeTaskFromLocalStorage(taskId) {
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks = tasks.filter((item) => item.id !== taskId);
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 
-  function editTaskFromLS(taskId, taskText) {
+  function editTaskFromLocalStorage(taskId, taskText) {
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks.forEach((item) => {
       if (item.id === taskId) {
@@ -109,7 +109,7 @@
   function deleteItem(element) {
     const elemId = element.id;
     element.remove();
-    removeTaskFromLS(elemId);
+    removeTaskFromLocalStorage(elemId);
   }
 
   function toggleItemCompletion(element) {
@@ -119,7 +119,7 @@
       isComplete = false;
     }
     element.classList.toggle('js-to-do-list__item_complete');
-    setCompleteTaskLS(elemId, isComplete);
+    setCompleteTaskLocalStorage(elemId, isComplete);
   }
 
   listElement.addEventListener('click', (event) => {
@@ -143,23 +143,27 @@
 })();
 
 (function () {
-  if (document.querySelector('input[name="filter"]')) {
-    document.querySelectorAll('input[name="filter"]').forEach((elem) => {
+  const inputNameFilter = document.querySelector('input[name="filter"]');
+  const inputNameFilterAll = document.querySelectorAll('input[name="filter"]');
+  if (!inputNameFilter || !inputNameFilterAll) return null;
+
+  if (inputNameFilter) {
+    inputNameFilterAll.forEach((elem) => {
       elem.addEventListener('change', function (event) {
         const classSource = document.querySelector('.to-do-list__affairs');
         if (!classSource) return null;
-        classSource.classList.remove('js-to-do-list__filter-item_show-all','js-to-do-list__filter-item_show-ready','js-to-do-list__filter-item_show-not-ready');
+        classSource.classList.remove('js__show-all','js__show-ready','js__show-not-ready');
         const filterAction = event.target.value;
 
         switch (filterAction) {
           case 'all':
-            classSource.classList.add('js-to-do-list__filter-item_show-all');
+            classSource.classList.add('js__show-all');
             break;
           case 'ready':
-            classSource.classList.add('js-to-do-list__filter-item_show-ready');
+            classSource.classList.add('js__show-ready');
             break;
           case 'not-ready':
-            classSource.classList.add('js-to-do-list__filter-item_show-not-ready');
+            classSource.classList.add('js__show-not-ready');
             break;
           default:
             return;

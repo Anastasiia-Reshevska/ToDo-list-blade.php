@@ -174,13 +174,13 @@
   text-decoration: line-through;
 }
 
-.js-to-do-list__filter-item_show-ready {
+.js__show-ready {
   .to-do-list__item:not(.js-to-do-list__item_complete) {
     display: none;
   }
 }
 
-.js-to-do-list__filter-item_show-not-ready {
+.js__show-not-ready {
   .js-to-do-list__item_complete {
     display: none;
   }
