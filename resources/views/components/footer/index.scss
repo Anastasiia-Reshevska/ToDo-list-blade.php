@@ -1,7 +1,7 @@
 /* Footer*/
 .footer {
   ul {
-    padding: 0 5px 0 0;
+    padding: 0 0.31em 0 0;
   }
 
   li {
@@ -14,12 +14,12 @@
 
   &__container {
     margin: 2.5em 1.5em 1.25em 1.5em;
-    border-top: 0.0625em solid #dbdad9;
+    border-top: 0.06em solid #dbdad9;
 
     @media (min-width: 992px) {
       display: flex;
       flex-direction: row;
-      padding-top: 1.875em;
+      padding-top: 1.87em;
     }
 
     @media (min-width: 1200px) {
@@ -29,18 +29,16 @@
   }
 
   &__navigation {
-    margin-right: 1.25em;
 
     @media (min-width: 768px) {
       display: flex;
       flex-direction: row;
       justify-content: end;
-      margin-left: 5.625em;
-      margin-right: 1.875em;
+      margin-left: 5.62em;
     }
 
     @media (min-width: 1200px) {
-      margin: 0 9.375em;
+      margin: 0 9.37em;
     }
   }
 
@@ -59,7 +57,7 @@
   }
 
   &__nav-item_border {
-    border-bottom: 0.0625em solid #dbdad9;
+    border-bottom: 0.06em solid #dbdad9;
 
     @media (min-width: 768px) {
       display: none;
@@ -74,8 +72,8 @@
     font-size: 1.25em;
 
     @media (min-width: 992px) {
-      max-width: 9.375em;
-      max-height: 9.375em;
+      max-width: 9.37em;
+      max-height: 9.37em;
     }
 
     @media (min-width: 1400px) {
@@ -95,9 +93,9 @@
     }
 
     li {
-      width: 1.875em;
-      height: 1.875em;
-      padding: 0.3125em;
+      width: 1.87em;
+      height: 1.87em;
+      padding: 0.31em;
 
       &:hover {
         background-color: #e7e6e4;
@@ -108,7 +106,7 @@
   }
 
   &__nav-item_options {
-    padding-left: 0.625em;
+    padding-left: 0.62em;
     font-family: $font-primary;
     font-size: 1em;
     font-weight: 700;
@@ -116,10 +114,12 @@
 
   // Buttons
   &__nav-btn {
-    display: flex;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
     justify-content: space-between;
     width: 100%;
-    padding: 0.4375em 1.25em 0 0.625em;
+    padding: 0.18em 1.25em 0.18em 0.62em;
 
     @media (min-width: 768px) {
       white-space: nowrap;
@@ -127,13 +127,17 @@
 
     &::after {
       content: '';
-      position: relative;
-      width: 0.4375em;
-      height: 0.4375em;
+      display: flex;
+      align-items: baseline;
+      position: absolute;
+      top: 18px;
+      right: 0.62em;
+      width: 0.43em;
+      height: 0.43em;
       margin-left: auto;
       border-right: solid #25221e;
       border-top: solid #25221e;
-      transform: translate(0.5em, 0.625em) rotate(45deg);
+      transform: translateY(-50%) rotate(45deg);
 
       @media (min-width: 768px) {
         display: none;
