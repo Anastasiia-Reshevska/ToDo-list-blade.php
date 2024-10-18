@@ -8,17 +8,17 @@
             </div>
             <div class="to-do-list__filter">
                 <div class="to-do-list__filter-item">
-                    <input id="input-all" type="radio" value="all" name="filter" checked>
+                    <input class="to-do-list__visually-hidden" id="input-all" type="radio" value="all" name="filter" checked>
                     <label for="input-all">Все задачи</label>
                 </div>
 
                 <div class="to-do-list__filter-item">
-                    <input id="input-ready" type="radio" value="ready" name="filter">
+                    <input class="to-do-list__visually-hidden" id="input-ready" type="radio" value="ready" name="filter">
                     <label for="input-ready">Выполненные</label>
                 </div>
 
                 <div class="to-do-list__filter-item">
-                    <input id="input-not-ready" type="radio" value="not-ready" name="filter">
+                    <input class="to-do-list__visually-hidden" id="input-not-ready" type="radio" value="not-ready" name="filter">
                     <label for="input-not-ready">Не выполненные</label>
                 </div>
             </div>

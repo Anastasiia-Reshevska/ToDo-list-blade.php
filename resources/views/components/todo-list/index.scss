@@ -71,14 +71,12 @@
     }
 
     input[type='radio']+label {
-      display: inline-block;
       text-align: right;
       padding: 0;
-      margin: 0 10px 0 0;
+      margin: 0 15px 0 0;
     }
 
     input[type='radio'] {
-      display: inline-block;
       visibility: hidden;
     }
 
@@ -166,6 +164,10 @@
     &:hover {
       background-color: #e39eac;
     }
+  }
+
+  &__visually-hidden {
+    display: none;
   }
 }
 

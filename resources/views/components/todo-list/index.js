@@ -152,22 +152,18 @@
       elem.addEventListener('change', function (event) {
         const classSource = document.querySelector('.to-do-list__affairs');
         if (!classSource) return null;
-        classSource.classList.remove('js__show-all','js__show-ready','js__show-not-ready');
+        classSource.classList.remove(
+          'js__show-all',
+          'js__show-ready',
+          'js__show-not-ready'
+        );
+        const TYPES_CONFIG = {
+          'all': 'js__show-all',
+          'ready': 'js__show-ready',
+          'not-ready': 'js__show-not-ready',
+        };
         const filterAction = event.target.value;
-
-        switch (filterAction) {
-          case 'all':
-            classSource.classList.add('js__show-all');
-            break;
-          case 'ready':
-            classSource.classList.add('js__show-ready');
-            break;
-          case 'not-ready':
-            classSource.classList.add('js__show-not-ready');
-            break;
-          default:
-            return;
-        }
+        classSource.classList.add(TYPES_CONFIG[filterAction]);
       });
     });
   }
